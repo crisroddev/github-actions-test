@@ -13,8 +13,17 @@ jobs:
           node -v
           npm -v
       
-      - name: oython command
+      - name: python command
         run: |
           import platform
           print(platform.processor())
         shell: python
+
+  run-windows-commands:
+    runs-on: windows-latest
+    steps:
+      - name: powershell
+        run: Get-Location
+      - name: Directory bash
+        run: pwd
+        shell: bash
